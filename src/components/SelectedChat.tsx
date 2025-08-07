@@ -38,21 +38,19 @@ export default function SelectedChat({
     <section className="col-span-3 flex flex-col bg-purple-100 rounded-xl overflow-hidden h-full">
       <ChatHeader user={otherUser} onSelectUser={onSelectUser} />
 
-      <div className="flex-1 overflow-y-auto">
-        {isLoading ? (
-          <div className="flex items-center justify-center h-full bg-purple-800">
-            <Spinner />
-          </div>
-        ) : (
-          <MessageList
-            messages={messages}
-            meId={me.id}
-            themAvatar={otherUser?.avatar_url || ""}
-            meAvatar={me.avatar_url}
-            onImageClick={setModalImage}
-          />
-        )}
-      </div>
+      {isLoading ? (
+        <div className="flex items-center justify-center h-full bg-purple-800">
+          <Spinner />
+        </div>
+      ) : (
+        <MessageList
+          messages={messages}
+          meId={me.id}
+          themAvatar={otherUser?.avatar_url || ""}
+          meAvatar={me.avatar_url}
+          onImageClick={setModalImage}
+        />
+      )}
 
       <MessageInput
         value={draft}
