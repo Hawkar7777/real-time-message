@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import { useEffect, useRef, useState } from "react";
 import type { MessageRow } from "../services/chatService";
 
@@ -204,7 +204,7 @@ export default function MessageItem({
         )}
 
         <div className="text-xs text-gray-600 !mt-1 text-right">
-          {format(new Date(msg.created_at), "hh:mm a")}
+          {format(parseISO(msg.created_at), "MMM d, yyyy 'at' HH:mm:ss")}
         </div>
       </div>
 
