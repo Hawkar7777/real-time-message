@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto Mono", monospace, sans-serif;
+  font-size: 1.6rem;
+  min-height: 100dvh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  color: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(123, 50, 255),
+    rgba(123, 50, 170)
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border: 3px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
